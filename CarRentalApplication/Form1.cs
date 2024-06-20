@@ -581,12 +581,12 @@ namespace CarRentalApplication
         /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
-            string query = "Select Top 1 FromBranchID, sum(TotalCost) as Profit From RentalTransaction Where DateFrom >= '2024-01-01' and DateTo <= '2024-12-31' Group by FromBranchID Order by Profit Desc;";
             reportData.Columns.Clear();
             reportData.Columns.Add("FromBranchID", "Branch ID");
+            reportData.Columns.Add("BranchName", "Branch Name");
             reportData.Columns.Add("Profit", "Profit");
 
-            query = "\r\nSelect Top 1 FromBranchID, sum(TotalCost) as Profit \r\nFrom RentalTransaction \r\nWhere DateFrom >= '2024-01-01' and DateTo <= '2024-12-31' \r\nGroup by FromBranchID \r\nOrder by Profit Desc;";
+            string query = "Select Top 1 FromBranchID, B.BranchName, sum(TotalCost) as Profit \r\nFrom RentalTransaction as RT, Branch as B\r\nWhere B.BranchID = FromBranchID and DateFrom >= '2024-01-01' and DateTo <= '2024-12-31' \r\nGroup by FromBranchID, B.BranchName\r\nOrder by Profit Desc;";
             try
             {
                 D1.query(query);
@@ -595,7 +595,7 @@ namespace CarRentalApplication
                 carData.Rows.Clear();
                 while (D1.myReader.Read())
                 {
-                    reportData.Rows.Add(D1.myReader["FromBranchID"].ToString(), (D1.myReader["Profit"]).ToString());
+                    reportData.Rows.Add(D1.myReader["FromBranchID"].ToString(), D1.myReader["BranchName"].ToString(), D1.myReader["Profit"].ToString());
                 }
 
                 D1.myReader.Close();

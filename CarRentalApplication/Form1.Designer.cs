@@ -282,14 +282,14 @@
             // employeePanel
             // 
             employeePanel.BackColor = Color.Lavender;
-            employeePanel.Controls.Add(menuPanel);
             employeePanel.Controls.Add(sectionTitleLabel);
             employeePanel.Controls.Add(menuCheckBox);
-            employeePanel.Controls.Add(changeCarPanel);
-            employeePanel.Controls.Add(generalPanel);
             employeePanel.Controls.Add(reportsPanel);
             employeePanel.Controls.Add(accountInformationPanel);
             employeePanel.Controls.Add(viewCarsPanel);
+            employeePanel.Controls.Add(changeCarPanel);
+            employeePanel.Controls.Add(generalPanel);
+            employeePanel.Controls.Add(menuPanel);
             employeePanel.Location = new Point(14, 11);
             employeePanel.Name = "employeePanel";
             employeePanel.Size = new Size(1009, 567);
@@ -944,7 +944,7 @@
             label2.Name = "label2";
             label2.Size = new Size(386, 58);
             label2.TabIndex = 0;
-            label2.Text = "Manufacturers whose cars are not being rented in every branch";
+            label2.Text = "Manufacturers whose cars are not being rented at every branch";
             // 
             // panel2
             // 
