@@ -194,6 +194,14 @@ namespace CarRentalApplication
             return panel;
         }
 
+        /// <summary>
+        /// Set label values
+        /// </summary>
+        /// <param name="label"></param>
+        /// <param name="name"></param>
+        /// <param name="location"></param>
+        /// <param name="font"></param>
+        /// <param name="foreColor"></param>
         public void modifyLabel(Label label, string name, Point location, Font font, Color foreColor)
         {
             label.AutoSize = true;
@@ -203,12 +211,22 @@ namespace CarRentalApplication
             label.ForeColor = foreColor;
         }
 
+        /// <summary>
+        /// Go Back to the Main Page From the Transactions Page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void goBackButton_Click(object sender, EventArgs e)
         {
             transactionsPanel.Visible = false;
             mainPagePanel.Visible = true;
         }
 
+        /// <summary>
+        /// Go to transactions page with the selected car
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void carPanel_Click(object sender, EventArgs e)
         {
             // Panel clicked of the car the user chose
@@ -242,6 +260,10 @@ namespace CarRentalApplication
             totalCost.Text = (costValue + feesValue).ToString();
 
         }
+
+        /// <summary>
+        /// fill combo boxes with branch values from database
+        /// </summary>
         private void fillBranchComboBox()
         {
             try
@@ -267,11 +289,22 @@ namespace CarRentalApplication
             }
         }
 
+        /// <summary>
+        /// Set the drop off location to the same location as the pick up location
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sameBranchButton_Click(object sender, EventArgs e)
         {
             dropOffComboBox.SelectedItem = pickUpComboBox.SelectedItem;
         }
 
+
+        /// <summary>
+        /// Set visibilities to the existing customer panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ecYesButton_Click(object sender, EventArgs e)
         {
             newCustomer = false;
@@ -281,6 +314,11 @@ namespace CarRentalApplication
             existingCustomerID.Clear();
         }
 
+        /// <summary>
+        /// Set visibilities to the the new customer panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ecNoButton_Click(object sender, EventArgs e)
         {
             newCustomer = true;
@@ -290,6 +328,11 @@ namespace CarRentalApplication
             refreshCustomerSection();
         }
 
+        /// <summary>
+        /// Customer reserves car
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void reserveButton_Click(object sender, EventArgs e)
         {
             string transactionsCustomerID = existingCustomerID.Text; // get customer ID if customer is new or existing
@@ -318,6 +361,9 @@ namespace CarRentalApplication
             carFlowPanel.Controls.Clear();
         }
 
+        /// <summary>
+        /// Insert new customer insto the database
+        /// </summary>
         private void insertCustomer()
         {
             string insertQuery = "INSERT INTO Customer (CustomerID, FirstName, LastName, Age, Street, City," +
@@ -353,6 +399,11 @@ namespace CarRentalApplication
         }
 
 
+        /// <summary>
+        /// insert Transaction into the database
+        /// </summary>
+        /// <param name="transactionCustomerID"></param>
+        /// <param name="rID"></param>
         private void insertTransaction_2(string transactionCustomerID, string rID)
         {
             string insertQuery = "INSERT INTO RentalTransaction (RegistrationID, DateFrom, DateTo, Fees, TotalCost, FromBranchID, ToBranchID, EmployeeID, CustomerID, CarID) " +
@@ -386,6 +437,9 @@ namespace CarRentalApplication
             }
         }
 
+        /// <summary>
+        /// Clear transactions text boxes for new use
+        /// </summary>
         private void refreshCustomerSection()
         {
             customerID.Clear();
@@ -400,6 +454,10 @@ namespace CarRentalApplication
             phoneNumber.Clear();
         }
 
+        /// <summary>
+        /// Calculate additional car fees
+        /// </summary>
+        /// <returns></returns>
         private float calculateFees()
         {
             float cleaningFees = 60;
@@ -412,6 +470,10 @@ namespace CarRentalApplication
             return cleaningFees + differentBranchFee;
         }
 
+        /// <summary>
+        /// generate a new registrationID for a rental transaction
+        /// </summary>
+        /// <returns></returns>
         private string generateRegistrationID()
         {
             Random random = new Random();
@@ -464,6 +526,11 @@ namespace CarRentalApplication
             return false;
         }
 
+        /// <summary>
+        /// check if CustomerID is unique
+        /// </summary>
+        /// <param name="customerID"></param>
+        /// <returns></returns>
         private bool checkUniqueCustomerID(string customerID)
         {
             try

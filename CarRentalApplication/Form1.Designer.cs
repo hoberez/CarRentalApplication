@@ -38,6 +38,51 @@
             sectionTitleLabel = new Label();
             menuCheckBox = new CheckBox();
             employeePanel = new Panel();
+            changeCarPanel = new Panel();
+            carTypePanel = new Panel();
+            showCarTypeButton = new Button();
+            button1 = new Button();
+            carTypeLabel = new Label();
+            branchCarTypeData = new DataGridView();
+            modifyCarPanel = new Panel();
+            modifyCarIDValue = new Label();
+            modifyModelIDLabel = new Label();
+            modifyModelIDComboBox = new ComboBox();
+            modifyBranchIDComboBox = new ComboBox();
+            modifyCarMainLabel = new Label();
+            modifyCarResetButton = new Button();
+            modifyCarButton = new Button();
+            modifyCarIDLabel = new Label();
+            modifyCarTypeLabel = new Label();
+            modifyBranchIDLabel = new Label();
+            goBackButton2 = new Button();
+            modifyColorText = new TextBox();
+            modifyManufacturer = new Label();
+            modifyColorLabel = new Label();
+            modifyManufacturerText = new TextBox();
+            AddCarPanel = new Panel();
+            label6 = new Label();
+            addModelIDComboBox = new ComboBox();
+            addBranchIDComboBox = new ComboBox();
+            addCarMainLabel = new Label();
+            addCarResetButton = new Button();
+            addCarButton = new Button();
+            addCarIDText = new TextBox();
+            addCarIDlabel = new Label();
+            label38 = new Label();
+            addBranchIDlabel = new Label();
+            goBackButton1 = new Button();
+            addColorText = new TextBox();
+            addManufacturerLabel = new Label();
+            addColorLabel = new Label();
+            addManufacturerText = new TextBox();
+            generalPanel = new Panel();
+            flowLayoutPanel4 = new FlowLayoutPanel();
+            label62 = new Label();
+            panel17 = new Panel();
+            label63 = new Label();
+            panel19 = new Panel();
+            monthCalendar1 = new MonthCalendar();
             reportsPanel = new Panel();
             panel3 = new Panel();
             reportData = new DataGridView();
@@ -91,7 +136,6 @@
             showAllButton = new Button();
             label9 = new Label();
             searchComboBox = new ComboBox();
-            SeeInfoButton = new Button();
             carData = new DataGridView();
             CarID = new DataGridViewTextBoxColumn();
             Manufacturer = new DataGridViewTextBoxColumn();
@@ -104,54 +148,17 @@
             searchButton = new Button();
             modifyButton = new Button();
             deleteButtonn = new Button();
-            changeCarPanel = new Panel();
-            showCarTypeButton = new Button();
-            carTypePanel = new Panel();
-            unshowCarTypeButton = new Button();
-            carTypeLabel = new Label();
-            carTypeDataGridView = new DataGridView();
-            modifyCarPanel = new Panel();
-            modifyCarIDValue = new Label();
-            modifyModelIDLabel = new Label();
-            modifyModelIDComboBox = new ComboBox();
-            modifyBranchIDComboBox = new ComboBox();
-            modifyCarMainLabel = new Label();
-            modifyCarResetButton = new Button();
-            modifyCarButton = new Button();
-            modifyCarIDLabel = new Label();
-            modifyCarTypeLabel = new Label();
-            modifyBranchIDLabel = new Label();
-            goBackButton2 = new Button();
-            modifyColorText = new TextBox();
-            modifyManufacturer = new Label();
-            modifyColorLabel = new Label();
-            modifyManufacturerText = new TextBox();
-            AddCarPanel = new Panel();
-            label6 = new Label();
-            addModelIDComboBox = new ComboBox();
-            addBranchIDComboBox = new ComboBox();
-            addCarMainLabel = new Label();
-            addCarResetButton = new Button();
-            addCarButton = new Button();
-            addCarIDText = new TextBox();
-            addCarIDlabel = new Label();
-            label38 = new Label();
-            addBranchIDlabel = new Label();
-            goBackButton1 = new Button();
-            addColorText = new TextBox();
-            addManufacturerLabel = new Label();
-            addColorLabel = new Label();
-            addManufacturerText = new TextBox();
-            generalPanel = new Panel();
-            flowLayoutPanel4 = new FlowLayoutPanel();
-            label62 = new Label();
-            panel17 = new Panel();
-            label63 = new Label();
-            panel19 = new Panel();
-            monthCalendar1 = new MonthCalendar();
             databaseBindingSource = new BindingSource(components);
             menuPanel.SuspendLayout();
             employeePanel.SuspendLayout();
+            changeCarPanel.SuspendLayout();
+            carTypePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)branchCarTypeData).BeginInit();
+            modifyCarPanel.SuspendLayout();
+            AddCarPanel.SuspendLayout();
+            generalPanel.SuspendLayout();
+            flowLayoutPanel4.SuspendLayout();
+            panel19.SuspendLayout();
             reportsPanel.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)reportData).BeginInit();
@@ -173,14 +180,6 @@
             panel8.SuspendLayout();
             viewCarsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carData).BeginInit();
-            changeCarPanel.SuspendLayout();
-            carTypePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)carTypeDataGridView).BeginInit();
-            modifyCarPanel.SuspendLayout();
-            AddCarPanel.SuspendLayout();
-            generalPanel.SuspendLayout();
-            flowLayoutPanel4.SuspendLayout();
-            panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)databaseBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -286,15 +285,464 @@
             employeePanel.Controls.Add(menuPanel);
             employeePanel.Controls.Add(sectionTitleLabel);
             employeePanel.Controls.Add(menuCheckBox);
+            employeePanel.Controls.Add(changeCarPanel);
+            employeePanel.Controls.Add(generalPanel);
             employeePanel.Controls.Add(reportsPanel);
             employeePanel.Controls.Add(accountInformationPanel);
             employeePanel.Controls.Add(viewCarsPanel);
-            employeePanel.Controls.Add(changeCarPanel);
-            employeePanel.Controls.Add(generalPanel);
             employeePanel.Location = new Point(14, 11);
             employeePanel.Name = "employeePanel";
             employeePanel.Size = new Size(1009, 567);
             employeePanel.TabIndex = 33;
+            // 
+            // changeCarPanel
+            // 
+            changeCarPanel.BackColor = Color.White;
+            changeCarPanel.Controls.Add(carTypePanel);
+            changeCarPanel.Controls.Add(modifyCarPanel);
+            changeCarPanel.Controls.Add(AddCarPanel);
+            changeCarPanel.Location = new Point(0, 47);
+            changeCarPanel.Name = "changeCarPanel";
+            changeCarPanel.Size = new Size(1109, 493);
+            changeCarPanel.TabIndex = 10;
+            changeCarPanel.Visible = false;
+            // 
+            // carTypePanel
+            // 
+            carTypePanel.BackColor = Color.Lavender;
+            carTypePanel.Controls.Add(showCarTypeButton);
+            carTypePanel.Controls.Add(button1);
+            carTypePanel.Controls.Add(carTypeLabel);
+            carTypePanel.Controls.Add(branchCarTypeData);
+            carTypePanel.Location = new Point(360, 36);
+            carTypePanel.Name = "carTypePanel";
+            carTypePanel.Size = new Size(629, 418);
+            carTypePanel.TabIndex = 37;
+            // 
+            // showCarTypeButton
+            // 
+            showCarTypeButton.BackColor = Color.Green;
+            showCarTypeButton.Location = new Point(304, 14);
+            showCarTypeButton.Name = "showCarTypeButton";
+            showCarTypeButton.Size = new Size(151, 29);
+            showCarTypeButton.TabIndex = 34;
+            showCarTypeButton.Text = "Show Car Types";
+            showCarTypeButton.UseVisualStyleBackColor = false;
+            showCarTypeButton.Click += showCarTypeButton_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Green;
+            button1.Location = new Point(461, 14);
+            button1.Name = "button1";
+            button1.Size = new Size(151, 29);
+            button1.TabIndex = 38;
+            button1.Text = "Show Branches";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // carTypeLabel
+            // 
+            carTypeLabel.AutoSize = true;
+            carTypeLabel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            carTypeLabel.Location = new Point(16, 10);
+            carTypeLabel.Name = "carTypeLabel";
+            carTypeLabel.Size = new Size(184, 31);
+            carTypeLabel.TabIndex = 35;
+            carTypeLabel.Text = "List of Car Types";
+            // 
+            // branchCarTypeData
+            // 
+            branchCarTypeData.AllowUserToAddRows = false;
+            branchCarTypeData.AllowUserToDeleteRows = false;
+            branchCarTypeData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            branchCarTypeData.Location = new Point(16, 49);
+            branchCarTypeData.Name = "branchCarTypeData";
+            branchCarTypeData.ReadOnly = true;
+            branchCarTypeData.RowHeadersWidth = 51;
+            branchCarTypeData.Size = new Size(596, 361);
+            branchCarTypeData.TabIndex = 35;
+            // 
+            // modifyCarPanel
+            // 
+            modifyCarPanel.BackColor = Color.Lavender;
+            modifyCarPanel.Controls.Add(modifyCarIDValue);
+            modifyCarPanel.Controls.Add(modifyModelIDLabel);
+            modifyCarPanel.Controls.Add(modifyModelIDComboBox);
+            modifyCarPanel.Controls.Add(modifyBranchIDComboBox);
+            modifyCarPanel.Controls.Add(modifyCarMainLabel);
+            modifyCarPanel.Controls.Add(modifyCarResetButton);
+            modifyCarPanel.Controls.Add(modifyCarButton);
+            modifyCarPanel.Controls.Add(modifyCarIDLabel);
+            modifyCarPanel.Controls.Add(modifyCarTypeLabel);
+            modifyCarPanel.Controls.Add(modifyBranchIDLabel);
+            modifyCarPanel.Controls.Add(goBackButton2);
+            modifyCarPanel.Controls.Add(modifyColorText);
+            modifyCarPanel.Controls.Add(modifyManufacturer);
+            modifyCarPanel.Controls.Add(modifyColorLabel);
+            modifyCarPanel.Controls.Add(modifyManufacturerText);
+            modifyCarPanel.Location = new Point(28, 35);
+            modifyCarPanel.Name = "modifyCarPanel";
+            modifyCarPanel.Size = new Size(322, 419);
+            modifyCarPanel.TabIndex = 36;
+            // 
+            // modifyCarIDValue
+            // 
+            modifyCarIDValue.AutoSize = true;
+            modifyCarIDValue.Location = new Point(145, 67);
+            modifyCarIDValue.Name = "modifyCarIDValue";
+            modifyCarIDValue.Size = new Size(53, 20);
+            modifyCarIDValue.TabIndex = 34;
+            modifyCarIDValue.Text = "Car ID:";
+            // 
+            // modifyModelIDLabel
+            // 
+            modifyModelIDLabel.AutoSize = true;
+            modifyModelIDLabel.Location = new Point(38, 240);
+            modifyModelIDLabel.Name = "modifyModelIDLabel";
+            modifyModelIDLabel.Size = new Size(70, 20);
+            modifyModelIDLabel.TabIndex = 33;
+            modifyModelIDLabel.Text = "ModelID:";
+            // 
+            // modifyModelIDComboBox
+            // 
+            modifyModelIDComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            modifyModelIDComboBox.FormattingEnabled = true;
+            modifyModelIDComboBox.Items.AddRange(new object[] { "oerug", "2q9732", "eoruvfeh", "vfeou" });
+            modifyModelIDComboBox.Location = new Point(145, 234);
+            modifyModelIDComboBox.Name = "modifyModelIDComboBox";
+            modifyModelIDComboBox.Size = new Size(125, 28);
+            modifyModelIDComboBox.TabIndex = 32;
+            // 
+            // modifyBranchIDComboBox
+            // 
+            modifyBranchIDComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            modifyBranchIDComboBox.FormattingEnabled = true;
+            modifyBranchIDComboBox.Items.AddRange(new object[] { "2", "32" });
+            modifyBranchIDComboBox.Location = new Point(145, 95);
+            modifyBranchIDComboBox.Name = "modifyBranchIDComboBox";
+            modifyBranchIDComboBox.Size = new Size(125, 28);
+            modifyBranchIDComboBox.TabIndex = 31;
+            // 
+            // modifyCarMainLabel
+            // 
+            modifyCarMainLabel.AutoSize = true;
+            modifyCarMainLabel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            modifyCarMainLabel.Location = new Point(15, 11);
+            modifyCarMainLabel.Name = "modifyCarMainLabel";
+            modifyCarMainLabel.Size = new Size(130, 31);
+            modifyCarMainLabel.TabIndex = 15;
+            modifyCarMainLabel.Text = "Modify Car";
+            // 
+            // modifyCarResetButton
+            // 
+            modifyCarResetButton.Location = new Point(160, 312);
+            modifyCarResetButton.Name = "modifyCarResetButton";
+            modifyCarResetButton.Size = new Size(94, 29);
+            modifyCarResetButton.TabIndex = 30;
+            modifyCarResetButton.Text = "Reset";
+            modifyCarResetButton.UseVisualStyleBackColor = true;
+            modifyCarResetButton.Click += modifyCarResetButton_Click;
+            // 
+            // modifyCarButton
+            // 
+            modifyCarButton.BackColor = Color.Green;
+            modifyCarButton.Location = new Point(46, 312);
+            modifyCarButton.Name = "modifyCarButton";
+            modifyCarButton.Size = new Size(94, 29);
+            modifyCarButton.TabIndex = 0;
+            modifyCarButton.Text = "Modify";
+            modifyCarButton.UseVisualStyleBackColor = false;
+            modifyCarButton.Click += modifyCarButton_Click;
+            // 
+            // modifyCarIDLabel
+            // 
+            modifyCarIDLabel.AutoSize = true;
+            modifyCarIDLabel.Location = new Point(30, 67);
+            modifyCarIDLabel.Name = "modifyCarIDLabel";
+            modifyCarIDLabel.Size = new Size(53, 20);
+            modifyCarIDLabel.TabIndex = 2;
+            modifyCarIDLabel.Text = "Car ID:";
+            // 
+            // modifyCarTypeLabel
+            // 
+            modifyCarTypeLabel.AutoSize = true;
+            modifyCarTypeLabel.Location = new Point(37, 218);
+            modifyCarTypeLabel.Name = "modifyCarTypeLabel";
+            modifyCarTypeLabel.Size = new Size(69, 20);
+            modifyCarTypeLabel.TabIndex = 14;
+            modifyCarTypeLabel.Text = "Car Type:";
+            // 
+            // modifyBranchIDLabel
+            // 
+            modifyBranchIDLabel.AutoSize = true;
+            modifyBranchIDLabel.Location = new Point(30, 99);
+            modifyBranchIDLabel.Name = "modifyBranchIDLabel";
+            modifyBranchIDLabel.Size = new Size(76, 20);
+            modifyBranchIDLabel.TabIndex = 4;
+            modifyBranchIDLabel.Text = "Branch ID:";
+            // 
+            // goBackButton2
+            // 
+            goBackButton2.Location = new Point(46, 356);
+            goBackButton2.Name = "goBackButton2";
+            goBackButton2.Size = new Size(208, 36);
+            goBackButton2.TabIndex = 9;
+            goBackButton2.Text = "Go Back";
+            goBackButton2.UseVisualStyleBackColor = true;
+            goBackButton2.Click += goBackButton_Click;
+            // 
+            // modifyColorText
+            // 
+            modifyColorText.Location = new Point(145, 129);
+            modifyColorText.Name = "modifyColorText";
+            modifyColorText.Size = new Size(125, 27);
+            modifyColorText.TabIndex = 5;
+            // 
+            // modifyManufacturer
+            // 
+            modifyManufacturer.AutoSize = true;
+            modifyManufacturer.Location = new Point(30, 166);
+            modifyManufacturer.Name = "modifyManufacturer";
+            modifyManufacturer.Size = new Size(97, 20);
+            modifyManufacturer.TabIndex = 8;
+            modifyManufacturer.Text = "Manufacturer";
+            // 
+            // modifyColorLabel
+            // 
+            modifyColorLabel.AutoSize = true;
+            modifyColorLabel.Location = new Point(30, 132);
+            modifyColorLabel.Name = "modifyColorLabel";
+            modifyColorLabel.Size = new Size(48, 20);
+            modifyColorLabel.TabIndex = 6;
+            modifyColorLabel.Text = "Color:";
+            // 
+            // modifyManufacturerText
+            // 
+            modifyManufacturerText.Location = new Point(145, 163);
+            modifyManufacturerText.Name = "modifyManufacturerText";
+            modifyManufacturerText.Size = new Size(125, 27);
+            modifyManufacturerText.TabIndex = 7;
+            // 
+            // AddCarPanel
+            // 
+            AddCarPanel.BackColor = Color.Lavender;
+            AddCarPanel.Controls.Add(label6);
+            AddCarPanel.Controls.Add(addModelIDComboBox);
+            AddCarPanel.Controls.Add(addBranchIDComboBox);
+            AddCarPanel.Controls.Add(addCarMainLabel);
+            AddCarPanel.Controls.Add(addCarResetButton);
+            AddCarPanel.Controls.Add(addCarButton);
+            AddCarPanel.Controls.Add(addCarIDText);
+            AddCarPanel.Controls.Add(addCarIDlabel);
+            AddCarPanel.Controls.Add(label38);
+            AddCarPanel.Controls.Add(addBranchIDlabel);
+            AddCarPanel.Controls.Add(goBackButton1);
+            AddCarPanel.Controls.Add(addColorText);
+            AddCarPanel.Controls.Add(addManufacturerLabel);
+            AddCarPanel.Controls.Add(addColorLabel);
+            AddCarPanel.Controls.Add(addManufacturerText);
+            AddCarPanel.Location = new Point(28, 35);
+            AddCarPanel.Name = "AddCarPanel";
+            AddCarPanel.Size = new Size(322, 419);
+            AddCarPanel.TabIndex = 35;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(38, 240);
+            label6.Name = "label6";
+            label6.Size = new Size(74, 20);
+            label6.TabIndex = 33;
+            label6.Text = "Model ID:";
+            // 
+            // addModelIDComboBox
+            // 
+            addModelIDComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            addModelIDComboBox.FormattingEnabled = true;
+            addModelIDComboBox.Location = new Point(145, 234);
+            addModelIDComboBox.Name = "addModelIDComboBox";
+            addModelIDComboBox.Size = new Size(125, 28);
+            addModelIDComboBox.TabIndex = 32;
+            // 
+            // addBranchIDComboBox
+            // 
+            addBranchIDComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            addBranchIDComboBox.FormattingEnabled = true;
+            addBranchIDComboBox.Location = new Point(145, 95);
+            addBranchIDComboBox.Name = "addBranchIDComboBox";
+            addBranchIDComboBox.Size = new Size(125, 28);
+            addBranchIDComboBox.TabIndex = 31;
+            // 
+            // addCarMainLabel
+            // 
+            addCarMainLabel.AutoSize = true;
+            addCarMainLabel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addCarMainLabel.Location = new Point(15, 11);
+            addCarMainLabel.Name = "addCarMainLabel";
+            addCarMainLabel.Size = new Size(151, 31);
+            addCarMainLabel.TabIndex = 15;
+            addCarMainLabel.Text = "Add New Car";
+            // 
+            // addCarResetButton
+            // 
+            addCarResetButton.Location = new Point(160, 312);
+            addCarResetButton.Name = "addCarResetButton";
+            addCarResetButton.Size = new Size(94, 29);
+            addCarResetButton.TabIndex = 30;
+            addCarResetButton.Text = "Reset";
+            addCarResetButton.UseVisualStyleBackColor = true;
+            addCarResetButton.Click += addCarResetButton_Click;
+            // 
+            // addCarButton
+            // 
+            addCarButton.BackColor = Color.Green;
+            addCarButton.Location = new Point(46, 312);
+            addCarButton.Name = "addCarButton";
+            addCarButton.Size = new Size(94, 29);
+            addCarButton.TabIndex = 0;
+            addCarButton.Text = "Add";
+            addCarButton.UseVisualStyleBackColor = false;
+            addCarButton.Click += addCarButton_Click;
+            // 
+            // addCarIDText
+            // 
+            addCarIDText.Location = new Point(145, 64);
+            addCarIDText.Name = "addCarIDText";
+            addCarIDText.Size = new Size(125, 27);
+            addCarIDText.TabIndex = 1;
+            // 
+            // addCarIDlabel
+            // 
+            addCarIDlabel.AutoSize = true;
+            addCarIDlabel.Location = new Point(30, 67);
+            addCarIDlabel.Name = "addCarIDlabel";
+            addCarIDlabel.Size = new Size(53, 20);
+            addCarIDlabel.TabIndex = 2;
+            addCarIDlabel.Text = "Car ID:";
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Location = new Point(37, 218);
+            label38.Name = "label38";
+            label38.Size = new Size(69, 20);
+            label38.TabIndex = 14;
+            label38.Text = "Car Type:";
+            // 
+            // addBranchIDlabel
+            // 
+            addBranchIDlabel.AutoSize = true;
+            addBranchIDlabel.Location = new Point(30, 99);
+            addBranchIDlabel.Name = "addBranchIDlabel";
+            addBranchIDlabel.Size = new Size(76, 20);
+            addBranchIDlabel.TabIndex = 4;
+            addBranchIDlabel.Text = "Branch ID:";
+            // 
+            // goBackButton1
+            // 
+            goBackButton1.Location = new Point(46, 356);
+            goBackButton1.Name = "goBackButton1";
+            goBackButton1.Size = new Size(208, 36);
+            goBackButton1.TabIndex = 9;
+            goBackButton1.Text = "Go Back";
+            goBackButton1.UseVisualStyleBackColor = true;
+            goBackButton1.Click += goBackButton_Click;
+            // 
+            // addColorText
+            // 
+            addColorText.Location = new Point(145, 129);
+            addColorText.Name = "addColorText";
+            addColorText.Size = new Size(125, 27);
+            addColorText.TabIndex = 5;
+            // 
+            // addManufacturerLabel
+            // 
+            addManufacturerLabel.AutoSize = true;
+            addManufacturerLabel.Location = new Point(30, 166);
+            addManufacturerLabel.Name = "addManufacturerLabel";
+            addManufacturerLabel.Size = new Size(100, 20);
+            addManufacturerLabel.TabIndex = 8;
+            addManufacturerLabel.Text = "Manufacturer:";
+            // 
+            // addColorLabel
+            // 
+            addColorLabel.AutoSize = true;
+            addColorLabel.Location = new Point(30, 132);
+            addColorLabel.Name = "addColorLabel";
+            addColorLabel.Size = new Size(48, 20);
+            addColorLabel.TabIndex = 6;
+            addColorLabel.Text = "Color:";
+            // 
+            // addManufacturerText
+            // 
+            addManufacturerText.Location = new Point(145, 163);
+            addManufacturerText.Name = "addManufacturerText";
+            addManufacturerText.Size = new Size(125, 27);
+            addManufacturerText.TabIndex = 7;
+            // 
+            // generalPanel
+            // 
+            generalPanel.BackColor = Color.White;
+            generalPanel.Controls.Add(flowLayoutPanel4);
+            generalPanel.Location = new Point(-1, 48);
+            generalPanel.Name = "generalPanel";
+            generalPanel.Size = new Size(1008, 492);
+            generalPanel.TabIndex = 14;
+            // 
+            // flowLayoutPanel4
+            // 
+            flowLayoutPanel4.Controls.Add(label62);
+            flowLayoutPanel4.Controls.Add(panel17);
+            flowLayoutPanel4.Controls.Add(label63);
+            flowLayoutPanel4.Controls.Add(panel19);
+            flowLayoutPanel4.Location = new Point(23, 10);
+            flowLayoutPanel4.Name = "flowLayoutPanel4";
+            flowLayoutPanel4.Size = new Size(298, 461);
+            flowLayoutPanel4.TabIndex = 39;
+            // 
+            // label62
+            // 
+            label62.AutoSize = true;
+            label62.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label62.Location = new Point(3, 0);
+            label62.Name = "label62";
+            label62.Size = new Size(181, 31);
+            label62.TabIndex = 36;
+            label62.Text = "Announcements";
+            // 
+            // panel17
+            // 
+            panel17.BackColor = Color.FromArgb(224, 224, 224);
+            panel17.Location = new Point(3, 34);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(285, 125);
+            panel17.TabIndex = 37;
+            // 
+            // label63
+            // 
+            label63.AutoSize = true;
+            label63.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label63.Location = new Point(3, 162);
+            label63.Name = "label63";
+            label63.Size = new Size(106, 31);
+            label63.TabIndex = 36;
+            label63.Text = "Calendar";
+            // 
+            // panel19
+            // 
+            panel19.BackColor = Color.White;
+            panel19.Controls.Add(monthCalendar1);
+            panel19.Location = new Point(3, 196);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(361, 235);
+            panel19.TabIndex = 37;
+            // 
+            // monthCalendar1
+            // 
+            monthCalendar1.Location = new Point(11, 9);
+            monthCalendar1.Name = "monthCalendar1";
+            monthCalendar1.TabIndex = 0;
             // 
             // reportsPanel
             // 
@@ -323,7 +771,6 @@
             reportData.RowHeadersWidth = 51;
             reportData.Size = new Size(537, 436);
             reportData.TabIndex = 0;
-            reportData.CellContentClick += reportData_CellContentClick;
             // 
             // flowLayoutPanel1
             // 
@@ -786,7 +1233,6 @@
             viewCarsPanel.Controls.Add(showAllButton);
             viewCarsPanel.Controls.Add(label9);
             viewCarsPanel.Controls.Add(searchComboBox);
-            viewCarsPanel.Controls.Add(SeeInfoButton);
             viewCarsPanel.Controls.Add(carData);
             viewCarsPanel.Controls.Add(label32);
             viewCarsPanel.Controls.Add(searchTextBox);
@@ -798,7 +1244,6 @@
             viewCarsPanel.Name = "viewCarsPanel";
             viewCarsPanel.Size = new Size(1009, 489);
             viewCarsPanel.TabIndex = 10;
-            viewCarsPanel.Paint += viewCarsPanel_Paint;
             // 
             // label14
             // 
@@ -837,15 +1282,6 @@
             searchComboBox.Name = "searchComboBox";
             searchComboBox.Size = new Size(152, 28);
             searchComboBox.TabIndex = 33;
-            // 
-            // SeeInfoButton
-            // 
-            SeeInfoButton.Location = new Point(246, 424);
-            SeeInfoButton.Name = "SeeInfoButton";
-            SeeInfoButton.Size = new Size(214, 29);
-            SeeInfoButton.TabIndex = 32;
-            SeeInfoButton.Text = "See Full Car Information";
-            SeeInfoButton.UseVisualStyleBackColor = true;
             // 
             // carData
             // 
@@ -917,7 +1353,6 @@
             searchTextBox.Name = "searchTextBox";
             searchTextBox.Size = new Size(286, 27);
             searchTextBox.TabIndex = 6;
-            searchTextBox.TextChanged += searchTextBox_TextChanged;
             // 
             // addButton
             // 
@@ -962,450 +1397,6 @@
             deleteButtonn.UseVisualStyleBackColor = false;
             deleteButtonn.Click += deleteButtonn_Click;
             // 
-            // changeCarPanel
-            // 
-            changeCarPanel.BackColor = Color.White;
-            changeCarPanel.Controls.Add(showCarTypeButton);
-            changeCarPanel.Controls.Add(carTypePanel);
-            changeCarPanel.Controls.Add(modifyCarPanel);
-            changeCarPanel.Controls.Add(AddCarPanel);
-            changeCarPanel.Location = new Point(0, 47);
-            changeCarPanel.Name = "changeCarPanel";
-            changeCarPanel.Size = new Size(1109, 493);
-            changeCarPanel.TabIndex = 10;
-            changeCarPanel.Visible = false;
-            // 
-            // showCarTypeButton
-            // 
-            showCarTypeButton.BackColor = Color.Green;
-            showCarTypeButton.Location = new Point(608, 231);
-            showCarTypeButton.Name = "showCarTypeButton";
-            showCarTypeButton.Size = new Size(151, 29);
-            showCarTypeButton.TabIndex = 34;
-            showCarTypeButton.Text = "Show Car Types";
-            showCarTypeButton.UseVisualStyleBackColor = false;
-            // 
-            // carTypePanel
-            // 
-            carTypePanel.BackColor = Color.Lavender;
-            carTypePanel.Controls.Add(unshowCarTypeButton);
-            carTypePanel.Controls.Add(carTypeLabel);
-            carTypePanel.Controls.Add(carTypeDataGridView);
-            carTypePanel.Location = new Point(360, 36);
-            carTypePanel.Name = "carTypePanel";
-            carTypePanel.Size = new Size(629, 418);
-            carTypePanel.TabIndex = 37;
-            // 
-            // unshowCarTypeButton
-            // 
-            unshowCarTypeButton.Location = new Point(518, 10);
-            unshowCarTypeButton.Name = "unshowCarTypeButton";
-            unshowCarTypeButton.Size = new Size(94, 29);
-            unshowCarTypeButton.TabIndex = 34;
-            unshowCarTypeButton.Text = "Unshow";
-            unshowCarTypeButton.UseVisualStyleBackColor = true;
-            // 
-            // carTypeLabel
-            // 
-            carTypeLabel.AutoSize = true;
-            carTypeLabel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            carTypeLabel.Location = new Point(16, 10);
-            carTypeLabel.Name = "carTypeLabel";
-            carTypeLabel.Size = new Size(184, 31);
-            carTypeLabel.TabIndex = 35;
-            carTypeLabel.Text = "List of Car Types";
-            // 
-            // carTypeDataGridView
-            // 
-            carTypeDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            carTypeDataGridView.Location = new Point(16, 49);
-            carTypeDataGridView.Name = "carTypeDataGridView";
-            carTypeDataGridView.RowHeadersWidth = 51;
-            carTypeDataGridView.Size = new Size(596, 361);
-            carTypeDataGridView.TabIndex = 35;
-            carTypeDataGridView.CellContentClick += carTypeDataGridView_CellContentClick;
-            // 
-            // modifyCarPanel
-            // 
-            modifyCarPanel.BackColor = Color.Lavender;
-            modifyCarPanel.Controls.Add(modifyCarIDValue);
-            modifyCarPanel.Controls.Add(modifyModelIDLabel);
-            modifyCarPanel.Controls.Add(modifyModelIDComboBox);
-            modifyCarPanel.Controls.Add(modifyBranchIDComboBox);
-            modifyCarPanel.Controls.Add(modifyCarMainLabel);
-            modifyCarPanel.Controls.Add(modifyCarResetButton);
-            modifyCarPanel.Controls.Add(modifyCarButton);
-            modifyCarPanel.Controls.Add(modifyCarIDLabel);
-            modifyCarPanel.Controls.Add(modifyCarTypeLabel);
-            modifyCarPanel.Controls.Add(modifyBranchIDLabel);
-            modifyCarPanel.Controls.Add(goBackButton2);
-            modifyCarPanel.Controls.Add(modifyColorText);
-            modifyCarPanel.Controls.Add(modifyManufacturer);
-            modifyCarPanel.Controls.Add(modifyColorLabel);
-            modifyCarPanel.Controls.Add(modifyManufacturerText);
-            modifyCarPanel.Location = new Point(28, 35);
-            modifyCarPanel.Name = "modifyCarPanel";
-            modifyCarPanel.Size = new Size(322, 419);
-            modifyCarPanel.TabIndex = 36;
-            // 
-            // modifyCarIDValue
-            // 
-            modifyCarIDValue.AutoSize = true;
-            modifyCarIDValue.Location = new Point(145, 67);
-            modifyCarIDValue.Name = "modifyCarIDValue";
-            modifyCarIDValue.Size = new Size(53, 20);
-            modifyCarIDValue.TabIndex = 34;
-            modifyCarIDValue.Text = "Car ID:";
-            // 
-            // modifyModelIDLabel
-            // 
-            modifyModelIDLabel.AutoSize = true;
-            modifyModelIDLabel.Location = new Point(38, 240);
-            modifyModelIDLabel.Name = "modifyModelIDLabel";
-            modifyModelIDLabel.Size = new Size(70, 20);
-            modifyModelIDLabel.TabIndex = 33;
-            modifyModelIDLabel.Text = "ModelID:";
-            // 
-            // modifyModelIDComboBox
-            // 
-            modifyModelIDComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            modifyModelIDComboBox.FormattingEnabled = true;
-            modifyModelIDComboBox.Items.AddRange(new object[] { "oerug", "2q9732", "eoruvfeh", "vfeou" });
-            modifyModelIDComboBox.Location = new Point(145, 234);
-            modifyModelIDComboBox.Name = "modifyModelIDComboBox";
-            modifyModelIDComboBox.Size = new Size(125, 28);
-            modifyModelIDComboBox.TabIndex = 32;
-            // 
-            // modifyBranchIDComboBox
-            // 
-            modifyBranchIDComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            modifyBranchIDComboBox.FormattingEnabled = true;
-            modifyBranchIDComboBox.Items.AddRange(new object[] { "2", "32" });
-            modifyBranchIDComboBox.Location = new Point(145, 95);
-            modifyBranchIDComboBox.Name = "modifyBranchIDComboBox";
-            modifyBranchIDComboBox.Size = new Size(125, 28);
-            modifyBranchIDComboBox.TabIndex = 31;
-            // 
-            // modifyCarMainLabel
-            // 
-            modifyCarMainLabel.AutoSize = true;
-            modifyCarMainLabel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            modifyCarMainLabel.Location = new Point(15, 11);
-            modifyCarMainLabel.Name = "modifyCarMainLabel";
-            modifyCarMainLabel.Size = new Size(130, 31);
-            modifyCarMainLabel.TabIndex = 15;
-            modifyCarMainLabel.Text = "Modify Car";
-            // 
-            // modifyCarResetButton
-            // 
-            modifyCarResetButton.Location = new Point(160, 312);
-            modifyCarResetButton.Name = "modifyCarResetButton";
-            modifyCarResetButton.Size = new Size(94, 29);
-            modifyCarResetButton.TabIndex = 30;
-            modifyCarResetButton.Text = "Reset";
-            modifyCarResetButton.UseVisualStyleBackColor = true;
-            modifyCarResetButton.Click += modifyCarResetButton_Click;
-            // 
-            // modifyCarButton
-            // 
-            modifyCarButton.BackColor = Color.Green;
-            modifyCarButton.Location = new Point(46, 312);
-            modifyCarButton.Name = "modifyCarButton";
-            modifyCarButton.Size = new Size(94, 29);
-            modifyCarButton.TabIndex = 0;
-            modifyCarButton.Text = "Modify";
-            modifyCarButton.UseVisualStyleBackColor = false;
-            modifyCarButton.Click += modifyCarButton_Click;
-            // 
-            // modifyCarIDLabel
-            // 
-            modifyCarIDLabel.AutoSize = true;
-            modifyCarIDLabel.Location = new Point(30, 67);
-            modifyCarIDLabel.Name = "modifyCarIDLabel";
-            modifyCarIDLabel.Size = new Size(53, 20);
-            modifyCarIDLabel.TabIndex = 2;
-            modifyCarIDLabel.Text = "Car ID:";
-            // 
-            // modifyCarTypeLabel
-            // 
-            modifyCarTypeLabel.AutoSize = true;
-            modifyCarTypeLabel.Location = new Point(37, 218);
-            modifyCarTypeLabel.Name = "modifyCarTypeLabel";
-            modifyCarTypeLabel.Size = new Size(69, 20);
-            modifyCarTypeLabel.TabIndex = 14;
-            modifyCarTypeLabel.Text = "Car Type:";
-            // 
-            // modifyBranchIDLabel
-            // 
-            modifyBranchIDLabel.AutoSize = true;
-            modifyBranchIDLabel.Location = new Point(30, 99);
-            modifyBranchIDLabel.Name = "modifyBranchIDLabel";
-            modifyBranchIDLabel.Size = new Size(76, 20);
-            modifyBranchIDLabel.TabIndex = 4;
-            modifyBranchIDLabel.Text = "Branch ID:";
-            // 
-            // goBackButton2
-            // 
-            goBackButton2.Location = new Point(46, 356);
-            goBackButton2.Name = "goBackButton2";
-            goBackButton2.Size = new Size(208, 36);
-            goBackButton2.TabIndex = 9;
-            goBackButton2.Text = "Go Back";
-            goBackButton2.UseVisualStyleBackColor = true;
-            goBackButton2.Click += goBackButton_Click;
-            // 
-            // modifyColorText
-            // 
-            modifyColorText.Location = new Point(145, 129);
-            modifyColorText.Name = "modifyColorText";
-            modifyColorText.Size = new Size(125, 27);
-            modifyColorText.TabIndex = 5;
-            // 
-            // modifyManufacturer
-            // 
-            modifyManufacturer.AutoSize = true;
-            modifyManufacturer.Location = new Point(30, 166);
-            modifyManufacturer.Name = "modifyManufacturer";
-            modifyManufacturer.Size = new Size(97, 20);
-            modifyManufacturer.TabIndex = 8;
-            modifyManufacturer.Text = "Manufacturer";
-            // 
-            // modifyColorLabel
-            // 
-            modifyColorLabel.AutoSize = true;
-            modifyColorLabel.Location = new Point(30, 132);
-            modifyColorLabel.Name = "modifyColorLabel";
-            modifyColorLabel.Size = new Size(48, 20);
-            modifyColorLabel.TabIndex = 6;
-            modifyColorLabel.Text = "Color:";
-            // 
-            // modifyManufacturerText
-            // 
-            modifyManufacturerText.Location = new Point(145, 163);
-            modifyManufacturerText.Name = "modifyManufacturerText";
-            modifyManufacturerText.Size = new Size(125, 27);
-            modifyManufacturerText.TabIndex = 7;
-            // 
-            // AddCarPanel
-            // 
-            AddCarPanel.BackColor = Color.Lavender;
-            AddCarPanel.Controls.Add(label6);
-            AddCarPanel.Controls.Add(addModelIDComboBox);
-            AddCarPanel.Controls.Add(addBranchIDComboBox);
-            AddCarPanel.Controls.Add(addCarMainLabel);
-            AddCarPanel.Controls.Add(addCarResetButton);
-            AddCarPanel.Controls.Add(addCarButton);
-            AddCarPanel.Controls.Add(addCarIDText);
-            AddCarPanel.Controls.Add(addCarIDlabel);
-            AddCarPanel.Controls.Add(label38);
-            AddCarPanel.Controls.Add(addBranchIDlabel);
-            AddCarPanel.Controls.Add(goBackButton1);
-            AddCarPanel.Controls.Add(addColorText);
-            AddCarPanel.Controls.Add(addManufacturerLabel);
-            AddCarPanel.Controls.Add(addColorLabel);
-            AddCarPanel.Controls.Add(addManufacturerText);
-            AddCarPanel.Location = new Point(28, 35);
-            AddCarPanel.Name = "AddCarPanel";
-            AddCarPanel.Size = new Size(322, 419);
-            AddCarPanel.TabIndex = 35;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(38, 240);
-            label6.Name = "label6";
-            label6.Size = new Size(74, 20);
-            label6.TabIndex = 33;
-            label6.Text = "Model ID:";
-            // 
-            // addModelIDComboBox
-            // 
-            addModelIDComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            addModelIDComboBox.FormattingEnabled = true;
-            addModelIDComboBox.Location = new Point(145, 234);
-            addModelIDComboBox.Name = "addModelIDComboBox";
-            addModelIDComboBox.Size = new Size(125, 28);
-            addModelIDComboBox.TabIndex = 32;
-            // 
-            // addBranchIDComboBox
-            // 
-            addBranchIDComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            addBranchIDComboBox.FormattingEnabled = true;
-            addBranchIDComboBox.Location = new Point(145, 95);
-            addBranchIDComboBox.Name = "addBranchIDComboBox";
-            addBranchIDComboBox.Size = new Size(125, 28);
-            addBranchIDComboBox.TabIndex = 31;
-            // 
-            // addCarMainLabel
-            // 
-            addCarMainLabel.AutoSize = true;
-            addCarMainLabel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addCarMainLabel.Location = new Point(15, 11);
-            addCarMainLabel.Name = "addCarMainLabel";
-            addCarMainLabel.Size = new Size(151, 31);
-            addCarMainLabel.TabIndex = 15;
-            addCarMainLabel.Text = "Add New Car";
-            // 
-            // addCarResetButton
-            // 
-            addCarResetButton.Location = new Point(160, 312);
-            addCarResetButton.Name = "addCarResetButton";
-            addCarResetButton.Size = new Size(94, 29);
-            addCarResetButton.TabIndex = 30;
-            addCarResetButton.Text = "Reset";
-            addCarResetButton.UseVisualStyleBackColor = true;
-            addCarResetButton.Click += addCarResetButton_Click;
-            // 
-            // addCarButton
-            // 
-            addCarButton.BackColor = Color.Green;
-            addCarButton.Location = new Point(46, 312);
-            addCarButton.Name = "addCarButton";
-            addCarButton.Size = new Size(94, 29);
-            addCarButton.TabIndex = 0;
-            addCarButton.Text = "Add";
-            addCarButton.UseVisualStyleBackColor = false;
-            addCarButton.Click += addCarButton_Click;
-            // 
-            // addCarIDText
-            // 
-            addCarIDText.Location = new Point(145, 64);
-            addCarIDText.Name = "addCarIDText";
-            addCarIDText.Size = new Size(125, 27);
-            addCarIDText.TabIndex = 1;
-            // 
-            // addCarIDlabel
-            // 
-            addCarIDlabel.AutoSize = true;
-            addCarIDlabel.Location = new Point(30, 67);
-            addCarIDlabel.Name = "addCarIDlabel";
-            addCarIDlabel.Size = new Size(53, 20);
-            addCarIDlabel.TabIndex = 2;
-            addCarIDlabel.Text = "Car ID:";
-            // 
-            // label38
-            // 
-            label38.AutoSize = true;
-            label38.Location = new Point(37, 218);
-            label38.Name = "label38";
-            label38.Size = new Size(69, 20);
-            label38.TabIndex = 14;
-            label38.Text = "Car Type:";
-            // 
-            // addBranchIDlabel
-            // 
-            addBranchIDlabel.AutoSize = true;
-            addBranchIDlabel.Location = new Point(30, 99);
-            addBranchIDlabel.Name = "addBranchIDlabel";
-            addBranchIDlabel.Size = new Size(76, 20);
-            addBranchIDlabel.TabIndex = 4;
-            addBranchIDlabel.Text = "Branch ID:";
-            // 
-            // goBackButton1
-            // 
-            goBackButton1.Location = new Point(46, 356);
-            goBackButton1.Name = "goBackButton1";
-            goBackButton1.Size = new Size(208, 36);
-            goBackButton1.TabIndex = 9;
-            goBackButton1.Text = "Go Back";
-            goBackButton1.UseVisualStyleBackColor = true;
-            goBackButton1.Click += goBackButton_Click;
-            // 
-            // addColorText
-            // 
-            addColorText.Location = new Point(145, 129);
-            addColorText.Name = "addColorText";
-            addColorText.Size = new Size(125, 27);
-            addColorText.TabIndex = 5;
-            // 
-            // addManufacturerLabel
-            // 
-            addManufacturerLabel.AutoSize = true;
-            addManufacturerLabel.Location = new Point(30, 166);
-            addManufacturerLabel.Name = "addManufacturerLabel";
-            addManufacturerLabel.Size = new Size(100, 20);
-            addManufacturerLabel.TabIndex = 8;
-            addManufacturerLabel.Text = "Manufacturer:";
-            // 
-            // addColorLabel
-            // 
-            addColorLabel.AutoSize = true;
-            addColorLabel.Location = new Point(30, 132);
-            addColorLabel.Name = "addColorLabel";
-            addColorLabel.Size = new Size(48, 20);
-            addColorLabel.TabIndex = 6;
-            addColorLabel.Text = "Color:";
-            // 
-            // addManufacturerText
-            // 
-            addManufacturerText.Location = new Point(145, 163);
-            addManufacturerText.Name = "addManufacturerText";
-            addManufacturerText.Size = new Size(125, 27);
-            addManufacturerText.TabIndex = 7;
-            // 
-            // generalPanel
-            // 
-            generalPanel.BackColor = Color.White;
-            generalPanel.Controls.Add(flowLayoutPanel4);
-            generalPanel.Location = new Point(-1, 48);
-            generalPanel.Name = "generalPanel";
-            generalPanel.Size = new Size(1008, 492);
-            generalPanel.TabIndex = 14;
-            // 
-            // flowLayoutPanel4
-            // 
-            flowLayoutPanel4.Controls.Add(label62);
-            flowLayoutPanel4.Controls.Add(panel17);
-            flowLayoutPanel4.Controls.Add(label63);
-            flowLayoutPanel4.Controls.Add(panel19);
-            flowLayoutPanel4.Location = new Point(23, 10);
-            flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Size = new Size(298, 461);
-            flowLayoutPanel4.TabIndex = 39;
-            // 
-            // label62
-            // 
-            label62.AutoSize = true;
-            label62.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label62.Location = new Point(3, 0);
-            label62.Name = "label62";
-            label62.Size = new Size(181, 31);
-            label62.TabIndex = 36;
-            label62.Text = "Announcements";
-            // 
-            // panel17
-            // 
-            panel17.BackColor = Color.FromArgb(224, 224, 224);
-            panel17.Location = new Point(3, 34);
-            panel17.Name = "panel17";
-            panel17.Size = new Size(285, 125);
-            panel17.TabIndex = 37;
-            // 
-            // label63
-            // 
-            label63.AutoSize = true;
-            label63.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label63.Location = new Point(3, 162);
-            label63.Name = "label63";
-            label63.Size = new Size(106, 31);
-            label63.TabIndex = 36;
-            label63.Text = "Calendar";
-            // 
-            // panel19
-            // 
-            panel19.BackColor = Color.White;
-            panel19.Controls.Add(monthCalendar1);
-            panel19.Location = new Point(3, 196);
-            panel19.Name = "panel19";
-            panel19.Size = new Size(361, 235);
-            panel19.TabIndex = 37;
-            // 
-            // monthCalendar1
-            // 
-            monthCalendar1.Location = new Point(11, 9);
-            monthCalendar1.Name = "monthCalendar1";
-            monthCalendar1.TabIndex = 0;
-            // 
             // databaseBindingSource
             // 
             databaseBindingSource.DataSource = typeof(MultiForm.Database);
@@ -1422,6 +1413,18 @@
             menuPanel.ResumeLayout(false);
             employeePanel.ResumeLayout(false);
             employeePanel.PerformLayout();
+            changeCarPanel.ResumeLayout(false);
+            carTypePanel.ResumeLayout(false);
+            carTypePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)branchCarTypeData).EndInit();
+            modifyCarPanel.ResumeLayout(false);
+            modifyCarPanel.PerformLayout();
+            AddCarPanel.ResumeLayout(false);
+            AddCarPanel.PerformLayout();
+            generalPanel.ResumeLayout(false);
+            flowLayoutPanel4.ResumeLayout(false);
+            flowLayoutPanel4.PerformLayout();
+            panel19.ResumeLayout(false);
             reportsPanel.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)reportData).EndInit();
@@ -1455,18 +1458,6 @@
             viewCarsPanel.ResumeLayout(false);
             viewCarsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)carData).EndInit();
-            changeCarPanel.ResumeLayout(false);
-            carTypePanel.ResumeLayout(false);
-            carTypePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)carTypeDataGridView).EndInit();
-            modifyCarPanel.ResumeLayout(false);
-            modifyCarPanel.PerformLayout();
-            AddCarPanel.ResumeLayout(false);
-            AddCarPanel.PerformLayout();
-            generalPanel.ResumeLayout(false);
-            flowLayoutPanel4.ResumeLayout(false);
-            flowLayoutPanel4.PerformLayout();
-            panel19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)databaseBindingSource).EndInit();
             ResumeLayout(false);
         }
@@ -1535,7 +1526,6 @@
         private TextBox modifyManufacturerText;
         private Label label9;
         private ComboBox searchComboBox;
-        private Button SeeInfoButton;
         private Panel panel3;
         private Panel panel1;
         private Panel panel6;
@@ -1559,8 +1549,7 @@
         private Button showAllButton;
         private Panel carTypePanel;
         private Button showCarTypeButton;
-        private DataGridView carTypeDataGridView;
-        private Button unshowCarTypeButton;
+        private DataGridView branchCarTypeData;
         private Label modifyCarIDValue;
         private Label label14;
         private Panel accountInformationPanel;
@@ -1593,5 +1582,6 @@
         private Label label11;
         private ComboBox report1ComboBox;
         private Label label12;
+        private Button button1;
     }
 }

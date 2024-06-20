@@ -33,6 +33,11 @@ namespace CarRentalApplication
             menuSignOutButton.FlatAppearance.BorderSize = 0;
         }
 
+        /// <summary>
+        /// Set panel visibilities and fill combo boxes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             employeePanel.Visible = true;
@@ -46,22 +51,29 @@ namespace CarRentalApplication
             fillCarTypeComboBox();
         }
 
+        /// <summary>
+        /// User is shown the modify panel with all the text boxes and combo boxes set to the selected car
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void modifyButton_Click(object sender, EventArgs e)
         {
+            // Does not transfer to modify panel if no car is selected in the datagridview carData
             if (carData.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Error: Must select a row to modify by clicking on the left-most column of the table");
                 return;
             }
 
+            // set panel visibilities
             setAllEmployeePagesFalse();
             changeCarPanel.Visible = true;
             modifyCarPanel.Visible = true;
             AddCarPanel.Visible = false;
-            carTypePanel.Visible = false;
             showCarTypeButton.Visible = true;
             menuPanel.Visible = false;
 
+            // set textboxes and selecteditem in comboboxes to the selected car in carData
             modifyCarIDValue.Text = carData.SelectedRows[0].Cells["CarID"].Value.ToString();
             modifyColorText.Text = carData.SelectedRows[0].Cells["Colour"].Value.ToString();
             modifyManufacturerText.Text = carData.SelectedRows[0].Cells["Manufacturer"].Value.ToString();
@@ -69,6 +81,11 @@ namespace CarRentalApplication
             modifyBranchIDComboBox.SelectedItem = carData.SelectedRows[0].Cells["BranchID"].Value.ToString().Trim();
         }
 
+        /// <summary>
+        /// Transfer user to the Add Page where user can add a car by setting panel visibilities
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addButton_Click(object sender, EventArgs e)
         {
             setAllEmployeePagesFalse();
@@ -76,10 +93,14 @@ namespace CarRentalApplication
 
             modifyCarPanel.Visible = false;
             AddCarPanel.Visible = true;
-            carTypePanel.Visible = false;
             showCarTypeButton.Visible = true;
         }
 
+        /// <summary>
+        /// Set the side menu panel visibility when menu button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox menu = (CheckBox)sender;
@@ -93,6 +114,11 @@ namespace CarRentalApplication
             }
         }
 
+        /// <summary>
+        /// Change Panel visibilities to show the General Section
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuGeneralButton_CheckedChanged(object sender, EventArgs e)
         {
             setAllEmployeePagesFalse();
@@ -100,13 +126,11 @@ namespace CarRentalApplication
             sectionTitleLabel.Text = "General";
         }
 
-        private void menuAccButton_CheckedChanged(object sender, EventArgs e)
-        {
-            setAllEmployeePagesFalse();
-            accountInformationPanel.Visible = true;
-            sectionTitleLabel.Text = "Account Information";
-        }
-
+        /// <summary>
+        /// Change Panel visibilities to show the Change Car Information Section
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuChangeButton_CheckedChanged(object sender, EventArgs e)
         {
             setAllEmployeePagesFalse();
@@ -114,6 +138,11 @@ namespace CarRentalApplication
             sectionTitleLabel.Text = "Change Car Information";
         }
 
+        /// <summary>
+        /// Change Panel viaibilities to show the Reports Section
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuReportsButton_CheckedChanged(object sender, EventArgs e)
         {
             setAllEmployeePagesFalse();
@@ -130,11 +159,21 @@ namespace CarRentalApplication
             changeCarPanel.Visible = false;
         }
 
+        /// <summary>
+        /// Close the Employee Form when user 'signs out'
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuSignOutButton_CheckedChanged(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Refreshes/Shows all the cars in the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void refresh_Click(object sender, EventArgs e)
         {
             try
@@ -157,6 +196,11 @@ namespace CarRentalApplication
 
         }
 
+        /// <summary>
+        /// Return user to the Change Car Information Section  from the add or modify panels
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void goBackButton_Click(object sender, EventArgs e)
         {
             changeCarPanel.Visible = false;
@@ -165,6 +209,11 @@ namespace CarRentalApplication
             resetAddPanel();
         }
 
+        /// <summary>
+        /// Insert a new car into the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addCarButton_Click(object sender, EventArgs e)
         {
 
@@ -180,6 +229,7 @@ namespace CarRentalApplication
             D1.myCommand.Parameters.AddWithValue("@ModelID", addModelIDComboBox.SelectedItem);
             D1.myCommand.Parameters.AddWithValue("@BranchID", addBranchIDComboBox.SelectedItem);
 
+      
             try
             {
                 int rowsAffec = D1.myCommand.ExecuteNonQuery(); // Execute the command
@@ -195,10 +245,14 @@ namespace CarRentalApplication
 
         }
 
+        /// <summary>
+        /// Modify a Car in the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void modifyCarButton_Click(object sender, EventArgs e)
         {
 
-            //Optional: rename variables for convenience
             string carID = modifyCarIDValue.Text;
             string colour = modifyColorText.Text; //adding .this is necessary to avoid a naming error
             string manufacturer = modifyManufacturerText.Text; //adding .this is necessary to avoid a naming error
@@ -236,6 +290,11 @@ namespace CarRentalApplication
             }
         }
 
+        /// <summary>
+        /// Delete a Car in the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteButtonn_Click(object sender, EventArgs e)
         {
             if (carData.SelectedRows.Count == 0)
@@ -272,6 +331,11 @@ namespace CarRentalApplication
             }
         }
 
+        /// <summary>
+        /// Search Car based on component chosen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void searchButton_Click(object sender, EventArgs e)
         {
             if (searchComboBox.SelectedItem == null)
@@ -300,11 +364,9 @@ namespace CarRentalApplication
 
         }
 
-        private void searchTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        ///  Fill Combo boxes with Branches
+        /// </summary>
         private void fillBranchComboBox()
         {
             try
@@ -330,6 +392,9 @@ namespace CarRentalApplication
             }
         }
 
+        /// <summary>
+        ///  Fill Combo box with Car Types
+        /// </summary>
         private void fillCarTypeComboBox()
         {
             try
@@ -355,6 +420,9 @@ namespace CarRentalApplication
             }
         }
 
+        /// <summary>
+        /// Reset Text boxes and combo boxes in the Add Panel to null/empty
+        /// </summary>
         private void resetAddPanel()
         {
             addCarIDText.Text = "";
@@ -364,59 +432,44 @@ namespace CarRentalApplication
             addModelIDComboBox.SelectedItem = null;
         }
 
+        /// <summary>
+        ///  Reset Text Boxes and Combo Box values to the original values of the selected Car
+        /// </summary>
         private void resetModifyPanel()
         {
-            modifyBranchIDComboBox.SelectedItem = null;
-            modifyManufacturerText.Text = "";
-            modifyColorText.Text = "";
-            modifyModelIDComboBox.SelectedItem = null;
-        }
-
-        private void carTypeDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            modifyCarIDValue.Text = carData.SelectedRows[0].Cells["CarID"].Value.ToString();
+            modifyColorText.Text = carData.SelectedRows[0].Cells["Colour"].Value.ToString();
+            modifyManufacturerText.Text = carData.SelectedRows[0].Cells["Manufacturer"].Value.ToString();
+            modifyModelIDComboBox.SelectedIndex = modifyModelIDComboBox.Items.IndexOf(carData.SelectedRows[0].Cells["ModelID"].Value.ToString().Trim());
+            modifyBranchIDComboBox.SelectedItem = carData.SelectedRows[0].Cells["BranchID"].Value.ToString().Trim();
 
         }
 
+        /// <summary>
+        /// Reset Add Car Section
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addCarResetButton_Click(object sender, EventArgs e)
         {
             resetAddPanel();
         }
 
+        /// <summary>
+        /// Reset Modify Car Section
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void modifyCarResetButton_Click(object sender, EventArgs e)
         {
-
+            resetModifyPanel(); 
         }
 
-        private void viewCarsPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private bool checkUniqueCarID(string carID)
-        {
-            try
-            {
-                D1.query("Select CarID from Car");
-
-                while (D1.myReader.Read())
-                {
-                    if (D1.myReader["CarID"].ToString().Trim() == carID)
-                    {
-                        D1.myReader.Close();
-                        return false;
-                    }
-                }
-                D1.myReader.Close();
-            }
-            catch (Exception e3)
-            {
-                MessageBox.Show(e3.ToString(), "Error");
-                D1.myReader.Close();
-            }
-
-            return true;
-        }
-
+        /// <summary>
+        /// Show data for Colour with the highest sales by month
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button21_Click(object sender, EventArgs e)
         {
             reportData.Columns.Clear();
@@ -448,6 +501,11 @@ namespace CarRentalApplication
             }
         }
 
+        /// <summary>
+        /// Show data for Customers who have rented previously
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button8_Click(object sender, EventArgs e)
         {
             reportData.Columns.Clear();
@@ -479,11 +537,11 @@ namespace CarRentalApplication
             }
         }
 
-        private void reportData_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+         /// <summary>
+         /// Show max and average daily rates of every branch
+         /// </summary>
+         /// <param name="sender"></param>
+         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             reportData.Columns.Clear();
@@ -503,7 +561,7 @@ namespace CarRentalApplication
                 while (D1.myReader.Read())
                 {
                     reportData.Rows.Add(D1.myReader["BranchID"].ToString(), D1.myReader["BranchName"].ToString(),
-                        D1.myReader["avg_daily_rate"].ToString(), D1.myReader["max_daily_rate"].ToString());
+                        float.Parse(D1.myReader["avg_daily_rate"].ToString()).ToString("0.00"), D1.myReader["max_daily_rate"].ToString());
                 }
 
                 D1.myReader.Close();
@@ -516,6 +574,11 @@ namespace CarRentalApplication
 
         }
 
+        /// <summary>
+        /// Show the Top 1 Branch with the most profit in 2024
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
             string query = "Select Top 1 FromBranchID, sum(TotalCost) as Profit From RentalTransaction Where DateFrom >= '2024-01-01' and DateTo <= '2024-12-31' Group by FromBranchID Order by Profit Desc;";
@@ -544,8 +607,105 @@ namespace CarRentalApplication
             }
         }
 
+        /// <summary>
+        ///  Show the manufacturers that are not being rented at every branch
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
+            reportData.Columns.Clear();
+            reportData.Columns.Add("Manufacturer", "Manufacturer");
+
+           string query = "Select Manufacturer From Car Group By Manufacturer\r\nHaving count(Distinct BranchID) != (Select count(BranchID)\r\nFrom Branch);\r\n";
+            try
+            {
+                D1.query(query);
+
+
+                carData.Rows.Clear();
+                while (D1.myReader.Read())
+                {
+                    reportData.Rows.Add(D1.myReader["Manufacturer"].ToString());
+                }
+
+                D1.myReader.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+                D1.myReader.Close();
+            }
+
+        }
+
+        /// <summary>
+        /// show all values in the Branch Table form the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            branchCarTypeData.Columns.Clear();
+            branchCarTypeData.Columns.Add("BranchID", "Branch ID");
+            branchCarTypeData.Columns.Add("BranchName", "Branch Name");
+            branchCarTypeData.Columns.Add("Street", "Street");
+
+
+            string query = "Select * From Branch;";
+            try
+            {
+                D1.query(query);
+
+
+                carData.Rows.Clear();
+                while (D1.myReader.Read())
+                {
+                    branchCarTypeData.Rows.Add(D1.myReader["BranchID"].ToString(), D1.myReader["BranchName"].ToString(), D1.myReader["Street"].ToString());
+                }
+
+                D1.myReader.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+                D1.myReader.Close();
+            }
+
+        }
+
+        /// <summary>
+        /// show all the car types in the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void showCarTypeButton_Click(object sender, EventArgs e)
+        {
+            branchCarTypeData.Columns.Clear();
+            branchCarTypeData.Columns.Add("ModelID", "Model ID");
+            branchCarTypeData.Columns.Add("ModelDesc", "Car Type");
+            branchCarTypeData.Columns.Add("Capacity", "# Seats");
+
+
+            string query = "Select * From CarType;";
+            try
+            {
+                D1.query(query);
+
+
+                carData.Rows.Clear();
+                while (D1.myReader.Read())
+                {
+                    branchCarTypeData.Rows.Add(D1.myReader["ModelID"].ToString(), D1.myReader["ModelDesc"].ToString(), D1.myReader["Capacity"].ToString());
+                }
+
+                D1.myReader.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+                D1.myReader.Close();
+            }
 
         }
     }

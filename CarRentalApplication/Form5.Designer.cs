@@ -942,7 +942,7 @@
             label48.AutoSize = true;
             label48.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label48.ForeColor = Color.Green;
-            label48.Location = new Point(266, 178);
+            label48.Location = new Point(274, 176);
             label48.Name = "label48";
             label48.Size = new Size(24, 28);
             label48.TabIndex = 44;
@@ -953,7 +953,7 @@
             label47.AutoSize = true;
             label47.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label47.ForeColor = Color.Green;
-            label47.Location = new Point(266, 120);
+            label47.Location = new Point(274, 118);
             label47.Name = "label47";
             label47.Size = new Size(24, 28);
             label47.TabIndex = 43;
@@ -964,7 +964,7 @@
             label35.AutoSize = true;
             label35.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label35.ForeColor = Color.Green;
-            label35.Location = new Point(266, 62);
+            label35.Location = new Point(274, 60);
             label35.Name = "label35";
             label35.Size = new Size(24, 28);
             label35.TabIndex = 42;
@@ -1003,7 +1003,7 @@
             cost.AutoSize = true;
             cost.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             cost.ForeColor = Color.Green;
-            cost.Location = new Point(296, 62);
+            cost.Location = new Point(293, 60);
             cost.Name = "cost";
             cost.Size = new Size(59, 28);
             cost.TabIndex = 22;
@@ -1014,7 +1014,7 @@
             fees.AutoSize = true;
             fees.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             fees.ForeColor = Color.Green;
-            fees.Location = new Point(296, 120);
+            fees.Location = new Point(293, 118);
             fees.Name = "fees";
             fees.Size = new Size(59, 28);
             fees.TabIndex = 21;
@@ -1025,7 +1025,7 @@
             totalCost.AutoSize = true;
             totalCost.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             totalCost.ForeColor = Color.Green;
-            totalCost.Location = new Point(296, 178);
+            totalCost.Location = new Point(293, 176);
             totalCost.Name = "totalCost";
             totalCost.Size = new Size(59, 28);
             totalCost.TabIndex = 20;
@@ -1432,8 +1432,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1056, 572);
-            Controls.Add(mainPagePanel);
             Controls.Add(transactionsPanel);
+            Controls.Add(mainPagePanel);
             Name = "Form5";
             Text = "Form5";
             Load += Form5_Load;

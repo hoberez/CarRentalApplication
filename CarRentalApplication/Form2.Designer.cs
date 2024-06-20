@@ -88,7 +88,6 @@
             customerPanel.Name = "customerPanel";
             customerPanel.Size = new Size(403, 333);
             customerPanel.TabIndex = 16;
-            customerPanel.Paint += customerPanel_Paint;
             // 
             // customerSignInButton2
             // 

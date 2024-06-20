@@ -20,6 +20,11 @@ namespace CarRentalApplication
             D1 = Dt;
         }
 
+        /// <summary>
+        /// Set Panel visbilities to Customer Sign in when loading the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form2_Load(object sender, EventArgs e)
         {
             customerPanel.Visible = true;
@@ -27,17 +32,21 @@ namespace CarRentalApplication
             createNewAccountPanel.Visible = true;
         }
 
-
+        /// <summary>
+        /// Close Form when user signs in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void customerSignInButton2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void createNewAccountPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Load Employee Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void employeeSignInButton_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1(D1);
@@ -45,6 +54,11 @@ namespace CarRentalApplication
             this.Close();
         }
 
+        /// <summary>
+        /// Switch Page to Customer Sign in by setting Panel visibilities
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void switchToCustomerLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             employeePanel.Visible = false;
@@ -52,6 +66,11 @@ namespace CarRentalApplication
             createNewAccountPanel.Visible = true;
         }
 
+        /// <summary>
+        /// Switch Page to Employee Sign in by setting Panel visibilities
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void switchToEmployeeLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             employeePanel.Visible = true;
@@ -59,9 +78,5 @@ namespace CarRentalApplication
             createNewAccountPanel.Visible = false;
         }
 
-        private void customerPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
