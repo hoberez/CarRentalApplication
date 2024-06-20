@@ -23,6 +23,7 @@ namespace CarRentalApplication
         Dictionary<Panel, Car> carsFiltered;
         Dictionary<string, CarType> carTypesFiltered;
         List<Branch> branches;
+        string empID;
         bool newCustomer;
 
         public Form5()
@@ -32,6 +33,7 @@ namespace CarRentalApplication
             this.carTypesFiltered = new Dictionary<string, CarType>();
             this.branches = new List<Branch>();
             this.newCustomer = false;
+            this.empID = "";
             InitializeComponent();
         }
 
@@ -354,8 +356,9 @@ namespace CarRentalApplication
                 }
             }
             string rID = generateRegistrationID();
+            getRandomEmployeeID();
             insertTransaction_2(transactionsCustomerID, rID);
-
+            
             transactionsPanel.Visible = false;
             mainPagePanel.Visible = true;
             carFlowPanel.Controls.Clear();
@@ -411,7 +414,7 @@ namespace CarRentalApplication
 
             D1.myCommand.CommandText = insertQuery; //CommandText allows us to query the database. Query is an umbrella term for some operations like insert, etc.
             D1.myCommand.Parameters.Clear(); //Clear any previous parameters to prevent conflict
-            
+
 
             //Insert the correct values into placeholder location
             D1.myCommand.Parameters.AddWithValue("@RegistrationID", rID);
@@ -421,7 +424,7 @@ namespace CarRentalApplication
             D1.myCommand.Parameters.AddWithValue("@TotalCost", Int32.Parse(totalCost.Text));
             D1.myCommand.Parameters.AddWithValue("@FromBranchID", branches[pickUpComboBox.SelectedIndex].BranchID);
             D1.myCommand.Parameters.AddWithValue("@ToBranchID", branches[dropOffComboBox.SelectedIndex].BranchID);
-            D1.myCommand.Parameters.AddWithValue("@EmployeeID", "1212");
+            D1.myCommand.Parameters.AddWithValue("@EmployeeID", empID);
             D1.myCommand.Parameters.AddWithValue("@CustomerID", transactionCustomerID);
             D1.myCommand.Parameters.AddWithValue("@CarID", tCarIDLabel.Text);
             try
@@ -502,9 +505,9 @@ namespace CarRentalApplication
             if (customerIDFilled) errorMessage.Append("\n- Please enter a Customer ID.");
             else if (isCustomerIDUnique) errorMessage.Append("\n- Customer ID already exists. Please choose a new ID.");
             if (driversInfoFilled) errorMessage.Append("\n- Please fill out the Driver's information section.");
-            if (contactInfoFilled)  errorMessage.Append("\n- Please fill out the Contact Information section.");
+            if (contactInfoFilled) errorMessage.Append("\n- Please fill out the Contact Information section.");
             if (billingAddressFilled) errorMessage.Append("\n- Please fill out the Billing Address section.");
-            if (!isAgeNumeric && age.Text.Length == 0)  errorMessage.Append("\n- Age must be filled out and numeric.");
+            if (!isAgeNumeric && age.Text.Length == 0) errorMessage.Append("\n- Age must be filled out and numeric.");
             else
             {
                 if (ageResult < 21) ageValid = false;
@@ -556,5 +559,29 @@ namespace CarRentalApplication
             return true;
         }
 
+        private void getRandomEmployeeID()
+        {
+            try
+            {
+                D1.query("SELECT TOP 1 EmployeeID FROM Employee\r\nORDER BY NEWID();");
+
+                while (D1.myReader.Read())
+                {
+                    empID = D1.myReader["EmployeeID"].ToString().Trim();
+
+                }
+                D1.myReader.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.ToString(), "Error");
+                D1.myReader.Close();
+            }
+        }
+
+        private void dateFrom_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

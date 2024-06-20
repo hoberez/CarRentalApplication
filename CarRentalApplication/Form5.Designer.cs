@@ -287,11 +287,12 @@
             dateFrom.Name = "dateFrom";
             dateFrom.Size = new Size(166, 27);
             dateFrom.TabIndex = 5;
+            dateFrom.ValueChanged += dateFrom_ValueChanged;
             // 
             // dateTo
             // 
             dateTo.Location = new Point(676, 97);
-            dateTo.MinDate = new DateTime(2024, 6, 11, 0, 0, 0, 0);
+            dateTo.MinDate = new DateTime(1754, 6, 11, 0, 0, 0, 0);
             dateTo.Name = "dateTo";
             dateTo.Size = new Size(166, 27);
             dateTo.TabIndex = 4;
@@ -1432,8 +1433,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1056, 572);
-            Controls.Add(transactionsPanel);
             Controls.Add(mainPagePanel);
+            Controls.Add(transactionsPanel);
             Name = "Form5";
             Text = "Form5";
             Load += Form5_Load;
