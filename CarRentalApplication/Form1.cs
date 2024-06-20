@@ -303,7 +303,6 @@ namespace CarRentalApplication
             }
             //Optional: rename varibales for convenience
             string carID = carData.SelectedRows[0].Cells["CarID"].Value.ToString();
-            label9.Text = carID;
 
             //Show what car is going to be deleted
             string carInfo = $"Car ID: {carID}";
@@ -318,16 +317,15 @@ namespace CarRentalApplication
             // Delete the parameteres that will be used in the SqlCommand (which above we have made to be DELETE). AddWithValue bascially means add the SQL command
             D1.myCommand.Parameters.AddWithValue("@CarID", carID);
 
-            int rowsAffec = D1.myCommand.ExecuteNonQuery(); // Execute the command
 
-            //Display an error if something goes wrong in order to provide clarity for the user
-            if (rowsAffec > 0)
+            try
             {
+                D1.myCommand.ExecuteNonQuery(); // Execute the command
                 MessageBox.Show("Car information delete from the database successfully.", "Success");
             }
-            else
+            catch (Exception e2)
             {
-                MessageBox.Show("Failed to delete car information to the database.", "Error");
+                MessageBox.Show("Failed to delete car information in the database as the car has already been reserved.", "Error");
             }
         }
 
